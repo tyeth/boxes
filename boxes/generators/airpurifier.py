@@ -58,6 +58,12 @@ class AirPurifier(Boxes):
             "--split_frames",  action="store", type=BoolArg(), default=True,
             help="Split frame pieces into four thin rectangles to save material")
         self.argparser.add_argument(
+            "--small_bed",  action="store", type=BoolArg(), default=True,
+            help="Attempt to break the design into small bed compatible pieces (more waste)")
+        self.argparser.add_argument(
+            "--small_bed_max",  action="store", type=float, default=330.,
+            help="Maximum width or breadth, whichever is least")
+        self.argparser.add_argument(
             "--fans_left",  action="store", type=int, default=-1,
             help="number of fans on the left side (-1 for maximal number)")
         self.argparser.add_argument(
